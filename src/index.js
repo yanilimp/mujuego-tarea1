@@ -1,18 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+/* eslint-disable import/order */
+/* eslint-disable import/namespace */
+import { View } from "react-native";
+import { Header } from "./components";
+import { styles } from "./styles";
 
-import { styles } from './styles';
-  
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header title="Adivina el número" />
     </View>
   );
-}
-
-
-
-
+};
 export default App;
