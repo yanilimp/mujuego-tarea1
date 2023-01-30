@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/namespace */
 /* eslint-disable prettier/prettier */
 import { StyleSheet } from "react-native";
-
+import { colors } from "../../constants";
 export const styles= StyleSheet.create({
     container: {
         flex:1,
@@ -11,7 +12,7 @@ export const styles= StyleSheet.create({
     },
     title : {
         fontSize: 18,
-        color: "#212121",
+        color: colors.text,
         textAlign: "center",
         paddingVertical: 10,
     },
@@ -23,12 +24,12 @@ export const styles= StyleSheet.create({
     label : {
         fontSize: 20,
         paddingVertical: 5,
-        color: '#212121',
+        color: colors.text,
         textAlign: 'center',
     },
     input : {
         fontSize: 20,
-        borderBottomColor: '#22577a',
+        borderBottomColor: colors.primary,
         borderBottomWidth: 1,
         width: '100%',
         minWidth: 70,

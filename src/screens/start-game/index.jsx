@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/order */
 /* eslint-disable prettier/prettier */
@@ -6,6 +7,7 @@
 import React from "react";
 import { View, Text, TextInput, Button } from "react-native";
 import { Card } from "../../components/index.js";
+import { colors } from "../../constants/index.js";
 
 import { styles } from "./styles.js";
 
@@ -20,12 +22,12 @@ export const StartGame = () => {
                 <Button
                     title="Reiniciar"
                     onPress={()=>null}
-                    color='#22577a'
+                    color={colors.primary}
                 />
                 <Button
                     title="Confirmar"
                     onPress={()=>null}
-                    color='#80ed99'
+                    color={colors.secondary}
                 />
                 </View>
             </Card>
