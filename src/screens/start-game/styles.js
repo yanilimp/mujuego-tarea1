@@ -41,5 +41,6 @@ export const styles= StyleSheet.create({
         width: '75%',
         justifyContent: 'space-around',
         marginTop: 20,
+        marginLeft: 30,
     },
 });
