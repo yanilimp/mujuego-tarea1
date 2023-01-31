@@ -6,7 +6,7 @@
 /* eslint-disable import/namespace */
 /* eslint-disable prettier/prettier */
 import React, {useState} from "react";
-import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
 import { Card } from "../../components/index.js";
 import { colors } from "../../constants/index.js";
 
@@ -14,10 +14,22 @@ import { styles } from "./styles.js";
 
 export const StartGame = () => {
     const [enteredValue, setEnteredValue] = useState("");
+    const [confirmed, setConfirmed] = useState(false);
 
     const onHandlerChange = (text) => {
         setEnteredValue(text.replace(/[^0-9]/g, ""));
     }
+
+    const onHandleReset = () => {
+        setEnteredValue("");
+        setConfirmed(false);
+    }
+    const onHandleConfirm = () => {
+        const chosenNumber = parseInt(enteredValue, 10);
+        if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+            Alert.alert('Número inválido', 'El número tiene que estar entre en 1 y 99', [{text: 'Entendido', style: 'destructive', onPress: onHandleReset}])
+        }
+    };
 
 
     return(
@@ -41,12 +53,12 @@ export const StartGame = () => {
                 <View style={styles.buttonContainer}>
                 <Button
                     title="Reiniciar"
-                    onPress={()=>null}
+                    onPress={onHandleReset}
                     color={colors.primary}
                 />
                 <Button
                     title="Confirmar"
-                    onPress={()=>null}
+                    onPress={onHandleConfirm}
                     color={colors.secondary}
                 />
                 </View>
