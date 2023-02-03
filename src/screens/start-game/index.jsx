@@ -12,7 +12,7 @@ import { colors } from "../../constants/index.js";
 
 import { styles } from "./styles.js";
 
-export const StartGame = () => {
+export const StartGame = ({onHandleStartGame}) => {
     const [enteredValue, setEnteredValue] = useState("");
     const [confirmed, setConfirmed] = useState(false);
     const [selectedNumber, setSelectedNumber] = useState(null);
@@ -36,7 +36,9 @@ export const StartGame = () => {
         }
     };
 
-    const onHandleStartGame = () => null;
+    const onHandleStartGame = () => {
+        onHandleStartGame(selectedNumber);
+      };
 
     const Confirmed = () => confirmed ? (
         <Card style={styles.confirmedContainer}>
